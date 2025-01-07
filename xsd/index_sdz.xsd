@@ -68,7 +68,7 @@
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
-                    <xs:attribute name="VerzeSDZ" type="xs:string" fixed="1.0.0" use="required"/>
+                    <xs:attribute name="VerzeSDZ" type="xs:string" fixed="1.0.1" use="required"/>
                     <xs:attribute name="DatumZapisu" type="xs:dateTime" use="required"/>
                     <xs:attribute name="PoskytovatelDat" type="xs:string" use="required"/>
                 </xs:extension>
