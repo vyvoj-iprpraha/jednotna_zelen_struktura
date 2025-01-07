@@ -1,0 +1,2256 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2"
+  elementFormDefault="qualified"
+  targetNamespace="atrsdz" xmlns="atrsdz">
+  <xs:import schemaLocation="./ext/gml/gml.xsd" namespace="http://www.opengis.net/gml/3.2" />
+    <xs:element name="ZapisObjektu">
+    <xs:annotation>
+      <xs:documentation>Způsob zápisu objektu: i - insert, u - update, d - delete, r - reference</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="i"/>
+        <xs:enumeration value="u"/>
+        <xs:enumeration value="d"/>
+        <xs:enumeration value="r"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ID_central" nillable="true" >
+    <xs:annotation>
+      <xs:documentation>Identifikátor centrální. Výchozí nastavení atributu u všech typů objektů je nepovinný, ale při záznamech, kromě těch určených k insertu, je povinný.</xs:documentation>
+    </xs:annotation>
+	<xs:simpleType>
+      <xs:restriction base="xs:string">
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ID_lokal">
+    <xs:annotation>
+      <xs:documentation>Identifikátor lokální</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:minLength value="1" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_poskyt">
+    <xs:annotation>
+      <xs:documentation>Poskytovatel</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 1</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 2</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 3</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="4">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 4</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="5">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 5</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="6">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 6</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="7">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 7</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="8">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 8</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="9">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 9</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="10">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 10</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="11">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 11</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="12">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 12</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="13">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 13</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="14">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 14</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="15">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 15</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="16">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 16</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="17">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 17</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="18">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 18</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="19">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 19</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="20">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 20</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="21">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 21</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="22">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 22</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="23">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Benice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="24">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Běchovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="25">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Březiněves</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="26">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Chabry</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="27">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Měcholupy</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="28">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Počernice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="29">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dubeč</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="30">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Klánovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="31">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Koloděje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="32">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Kolovraty</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="33">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Královice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="34">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Kunratice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="35">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Křeslice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="36">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Libuš</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="37">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lipence</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="38">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lochkov</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="39">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lysolaje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="40">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Nebušice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="41">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Nedvězí</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="42">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Petrovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="43">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Přední Kopanina</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="44">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Satalice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="45">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Slivenec</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="46">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Suchdol</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="47">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Troja</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="48">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Velká Chuchle</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="49">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Vinoř</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="50">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Zbraslav</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="51">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Zličín</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="52">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Újezd</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="53">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Čakovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="54">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Ďáblice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="55">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Řeporyje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="56">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Šeberov</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="57">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Štěrboholy</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="58">
+          <xs:annotation>
+            <xs:documentation>MHMP-OCP</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="59">
+          <xs:annotation>
+            <xs:documentation>CDSW</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="60">
+          <xs:annotation>
+            <xs:documentation>GEPRO</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_r_pece" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Režim péče</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>Intenzitní třída údržby I</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>Intenzitní třída údržby II</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>Intenzitní třída údržby III</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="4">
+          <xs:annotation>
+            <xs:documentation>Intenzitní třída údržby IV</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_sprav">
+    <xs:annotation>
+      <xs:documentation>Správce</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 1</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 2</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 3</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="4">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 4</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="5">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 5</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="6">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 6</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="7">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 7</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="8">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 8</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="9">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 9</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="10">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 10</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="11">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 11</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="12">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 12</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="13">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 13</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="14">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 14</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="15">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 15</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="16">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 16</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="17">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 17</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="18">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 18</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="19">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 19</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="20">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 20</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="21">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 21</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="22">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 22</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="23">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Benice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="24">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Běchovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="25">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Březiněves</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="26">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Chabry</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="27">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Měcholupy</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="28">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Počernice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="29">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dubeč</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="30">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Klánovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="31">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Koloděje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="32">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Kolovraty</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="33">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Královice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="34">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Kunratice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="35">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Křeslice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="36">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Libuš</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="37">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lipence</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="38">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lochkov</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="39">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lysolaje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="40">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Nebušice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="41">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Nedvězí</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="42">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Petrovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="43">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Přední Kopanina</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="44">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Satalice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="45">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Slivenec</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="46">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Suchdol</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="47">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Troja</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="48">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Velká Chuchle</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="49">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Vinoř</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="50">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Zbraslav</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="51">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Zličín</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="52">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Újezd</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="53">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Čakovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="54">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Ďáblice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="55">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Řeporyje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="56">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Šeberov</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="57">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Štěrboholy</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="58">
+          <xs:annotation>
+            <xs:documentation>MHMP-OCP</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="59">
+          <xs:annotation>
+            <xs:documentation>Technická správa komunikací</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="60">
+          <xs:annotation>
+            <xs:documentation>Stome a spoluvlastníci</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="61">
+          <xs:annotation>
+            <xs:documentation>Pražské vodovody a kanalizace (PVK)</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="0">
+          <xs:annotation>
+            <xs:documentation>nespecifikovaný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_udrz" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Udržovatel</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 1</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 2</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 3</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="4">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 4</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="5">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 5</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="6">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 6</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="7">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 7</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="8">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 8</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="9">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 9</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="10">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 10</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="11">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 11</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="12">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 12</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="13">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 13</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="14">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 14</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="15">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 15</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="16">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 16</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="17">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 17</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="18">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 18</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="19">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 19</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="20">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 20</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="21">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 21</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="22">
+          <xs:annotation>
+            <xs:documentation>MČ Praha 22</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="23">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Benice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="24">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Běchovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="25">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Březiněves</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="26">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Chabry</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="27">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Měcholupy</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="28">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dolní Počernice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="29">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Dubeč</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="30">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Klánovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="31">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Koloděje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="32">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Kolovraty</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="33">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Královice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="34">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Kunratice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="35">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Křeslice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="36">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Libuš</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="37">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lipence</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="38">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lochkov</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="39">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Lysolaje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="40">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Nebušice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="41">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Nedvězí</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="42">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Petrovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="43">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Přední Kopanina</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="44">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Satalice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="45">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Slivenec</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="46">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Suchdol</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="47">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Troja</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="48">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Velká Chuchle</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="49">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Vinoř</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="50">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Zbraslav</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="51">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Zličín</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="52">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Újezd</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="53">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Čakovice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="54">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Ďáblice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="55">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Řeporyje</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="56">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Šeberov</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="57">
+          <xs:annotation>
+            <xs:documentation>MČ Praha-Štěrboholy</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="58">
+          <xs:annotation>
+            <xs:documentation>MHMP OCP</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="59">
+          <xs:annotation>
+            <xs:documentation>Technická správa komunikací</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="60">
+          <xs:annotation>
+            <xs:documentation>Lesy HMP firma</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="61">
+          <xs:annotation>
+            <xs:documentation>nájemce objektu</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="0">
+          <xs:annotation>
+            <xs:documentation>neurčený</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_fce_ZP">
+    <xs:annotation>
+      <xs:documentation>Funkční typ základní plochy zeleně</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>Arboretum</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>Botanická zahrada</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>Doprovodná zeleň</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="4">
+          <xs:annotation>
+            <xs:documentation>Hospodářská zeleň</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="5">
+          <xs:annotation>
+            <xs:documentation>Hřbitov</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="6">
+          <xs:annotation>
+            <xs:documentation>Jiné (ostatní)</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="7">
+          <xs:annotation>
+            <xs:documentation>Lesopark</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="8">
+          <xs:annotation>
+            <xs:documentation>Nábřeží</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="9">
+          <xs:annotation>
+            <xs:documentation>Obytná ulice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="10">
+          <xs:annotation>
+            <xs:documentation>Park</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="11">
+          <xs:annotation>
+            <xs:documentation>Parkově upravená plocha</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="12">
+          <xs:annotation>
+            <xs:documentation>Rozptýlená zeleň</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="13">
+          <xs:annotation>
+            <xs:documentation>Uliční stromořadí</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="14">
+          <xs:annotation>
+            <xs:documentation>Zahrádkářské osady</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="15">
+          <xs:annotation>
+            <xs:documentation>Zeleň bydlení - rodinné domy</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="16">
+          <xs:annotation>
+            <xs:documentation>Zeleň komerčních ploch</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="17">
+          <xs:annotation>
+            <xs:documentation>Zeleň obytných souborů</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="18">
+          <xs:annotation>
+            <xs:documentation>Zeleň sportovních zařízení</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="19">
+          <xs:annotation>
+            <xs:documentation>Zeleň školních a kulturních zařízení</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="20">
+          <xs:annotation>
+            <xs:documentation>Zeleň zdravotnických zařízení</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="21">
+          <xs:annotation>
+            <xs:documentation>Zeleň dopravních staveb</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="22">
+          <xs:annotation>
+            <xs:documentation>Zoologická zahrada</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_drevin" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kategorie dřeviny</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>Jehličnatý</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>Listnatý</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>Ovocný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="4">
+          <xs:annotation>
+            <xs:documentation>Smíšený</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="5">
+          <xs:annotation>
+            <xs:documentation>Vřesovištní</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_zapoj" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Zápoj</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>Půdopokryvný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>Rozvolněný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>Zapojený</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_tvar" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Pěstební tvar</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>Tvarovaný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>Volně rostlý</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="vysadba" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Rok výsadby</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:minInclusive value="1800"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="ID_strom" type="xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Identifikátor databáze stromořadí</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ID_skupiny_stromu" type="xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Identifikátor skupiny stromů</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ID_stromoradi" type="xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Identifikátor stromořadí</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="taxon_rod" type="xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Taxon rod</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="taxon_druh" type="xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Taxon druh</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="taxon_kultivar" type="xs:string" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Taxon kultivar</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="kod_povrch" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Převažující povrch ploch</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="100">
+          <xs:annotation>
+            <xs:documentation>Beton</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="200">
+          <xs:annotation>
+            <xs:documentation>Černý úhor</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="201">
+          <xs:annotation>
+            <xs:documentation>Černý úhor borka</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="202">
+          <xs:annotation>
+            <xs:documentation>Černý úhor kačírek</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="203">
+          <xs:annotation>
+            <xs:documentation>Černý úhor nemulčované</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="204">
+          <xs:annotation>
+            <xs:documentation>Černý úhor písek</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="205">
+          <xs:annotation>
+            <xs:documentation>Černý úhor sláma</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="206">
+          <xs:annotation>
+            <xs:documentation>Černý úhor štěrk</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="300">
+          <xs:annotation>
+            <xs:documentation>Dlažba</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="301">
+          <xs:annotation>
+            <xs:documentation>Dlažba betonová</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="302">
+          <xs:annotation>
+            <xs:documentation>Dlažba kamenná</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="303">
+          <xs:annotation>
+            <xs:documentation>Dlažba štětová kamenná</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="304">
+          <xs:annotation>
+            <xs:documentation>Dlažba zámková</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="400">
+          <xs:annotation>
+            <xs:documentation>Kamenné kostky</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="500">
+          <xs:annotation>
+            <xs:documentation>Mlat</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="600">
+          <xs:annotation>
+            <xs:documentation>Mozaika</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="701">
+          <xs:annotation>
+            <xs:documentation>Mříže - beton</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="702">
+          <xs:annotation>
+            <xs:documentation>Mříže - bez mříže</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="703">
+          <xs:annotation>
+            <xs:documentation>Mříže - hliník</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="704">
+          <xs:annotation>
+            <xs:documentation>Mříže - konglomerát</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="705">
+          <xs:annotation>
+            <xs:documentation>Mříže - litina</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="706">
+          <xs:annotation>
+            <xs:documentation>Mříže - nerez</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="700">
+          <xs:annotation>
+            <xs:documentation>Mříže-nespecifikována</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="707">
+          <xs:annotation>
+            <xs:documentation>Mříže - pletivo</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="800">
+          <xs:annotation>
+            <xs:documentation>Mulč</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="900">
+          <xs:annotation>
+            <xs:documentation>Štěrk</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="1000">
+          <xs:annotation>
+            <xs:documentation>Umělý povrch</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="1100">
+          <xs:annotation>
+            <xs:documentation>Vegetační tvárnice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="1200">
+          <xs:annotation>
+            <xs:documentation>Živice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="1300">
+          <xs:annotation>
+            <xs:documentation>Vegetační povrch</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="99">
+          <xs:annotation>
+            <xs:documentation>Jiný povrch</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_k_mat" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Konstrukční materiál</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>Beton</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>Cihla</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>Dřevo</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="4">
+          <xs:annotation>
+            <xs:documentation>Kámen</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="5">
+          <xs:annotation>
+            <xs:documentation>Kombinace</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="6">
+          <xs:annotation>
+            <xs:documentation>Kov</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="7">
+          <xs:annotation>
+            <xs:documentation>Kovaný prvek</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="8">
+          <xs:annotation>
+            <xs:documentation>Kovové lanko</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="9">
+          <xs:annotation>
+            <xs:documentation>Lano</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="10">
+          <xs:annotation>
+            <xs:documentation>Plast</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="11">
+          <xs:annotation>
+            <xs:documentation>Pletivo</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="12">
+          <xs:annotation>
+            <xs:documentation>Suché zdivo</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="13">
+          <xs:annotation>
+            <xs:documentation>Vegetační tvárnice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="14">
+          <xs:annotation>
+            <xs:documentation>Zdivo</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="99">
+          <xs:annotation>
+            <xs:documentation>Jiný materiál</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_typTP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Typ technického podprvku</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="3031">
+          <xs:annotation>
+            <xs:documentation>Lavička stabilní</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3032">
+          <xs:annotation>
+            <xs:documentation>Lavička přenosná</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3131">
+          <xs:annotation>
+            <xs:documentation>Zahradní hydrant - postřikovač</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3132">
+          <xs:annotation>
+            <xs:documentation>Zahradní hydrant - jiný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_10_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 10</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="11">
+          <xs:annotation>
+            <xs:documentation>Záhon letniček</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="12">
+          <xs:annotation>
+            <xs:documentation>Záhon růží</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="13">
+          <xs:annotation>
+            <xs:documentation>Záhon trvalek</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="14">
+          <xs:annotation>
+            <xs:documentation>Záhon</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_20_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 20</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="21">
+          <xs:annotation>
+            <xs:documentation>Zeleň v nádobách</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_30_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 30</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="31">
+          <xs:annotation>
+            <xs:documentation>Bylinné společenstvo</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="32">
+          <xs:annotation>
+            <xs:documentation>Ruderální porost</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_40_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 40</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="41">
+          <xs:annotation>
+            <xs:documentation>Skupina keřů</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_50_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 50</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="51">
+          <xs:annotation>
+            <xs:documentation>Keř</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_60_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 60</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="61">
+          <xs:annotation>
+            <xs:documentation>Skupina stromů</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_70_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 70</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="71">
+          <xs:annotation>
+            <xs:documentation>Strom</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_80_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 80</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="81">
+          <xs:annotation>
+            <xs:documentation>Stromořadí</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_100_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 100</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="101">
+          <xs:annotation>
+            <xs:documentation>Popínavá dřevina</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_110_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 110</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="111">
+          <xs:annotation>
+            <xs:documentation>Porost dřevin</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_120_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 120</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="121">
+          <xs:annotation>
+            <xs:documentation>Trávník</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="122">
+          <xs:annotation>
+            <xs:documentation>Trávník luční</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="123">
+          <xs:annotation>
+            <xs:documentation>Trávník nestandard</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="124">
+          <xs:annotation>
+            <xs:documentation>Trávník parkový</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="125">
+          <xs:annotation>
+            <xs:documentation>Trávník parterový</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="126">
+          <xs:annotation>
+            <xs:documentation>Trávník sportovní</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="127">
+          <xs:annotation>
+            <xs:documentation>Vegetační dlažba</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_130_VP">
+    <xs:annotation>
+      <xs:documentation>Kód vegetačního prvku skupiny 130</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="131">
+          <xs:annotation>
+            <xs:documentation>Živý plot</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_10_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 10</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="11">
+          <xs:annotation>
+            <xs:documentation>Cesta</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_20_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 20</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="21">
+          <xs:annotation>
+            <xs:documentation>Chodník</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="22">
+          <xs:annotation>
+            <xs:documentation>Stromová mísa</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_30_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 30</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="31">
+          <xs:annotation>
+            <xs:documentation>Opěrná zeď</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_40_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 40</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="41">
+          <xs:annotation>
+            <xs:documentation>Oplocení</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_50_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 50</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="51">
+          <xs:annotation>
+            <xs:documentation>Parkoviště</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_60_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 60</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="61">
+          <xs:annotation>
+            <xs:documentation>Plocha zpevněná - neurčeno</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_70_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 70</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="71">
+          <xs:annotation>
+            <xs:documentation>Schodiště</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_80_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 80</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="81">
+          <xs:annotation>
+            <xs:documentation>Zábradlí</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_90_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 90</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="91">
+          <xs:annotation>
+            <xs:documentation>Plastika</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="92">
+          <xs:annotation>
+            <xs:documentation>Socha</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="93">
+          <xs:annotation>
+            <xs:documentation>Umělecký artefakt jiný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_100_TP_bod" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 100</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="101">
+          <xs:annotation>
+            <xs:documentation>Bazén, kašna</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="107">
+          <xs:annotation>
+            <xs:documentation>Vodní prvek jiný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="108">
+          <xs:annotation>
+            <xs:documentation>Vodotrysk</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_100_TP_linie" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 100</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="102">
+          <xs:annotation>
+            <xs:documentation>Potok, řeka</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="105">
+          <xs:annotation>
+            <xs:documentation>Umělý vodní tok</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_100_TP_plocha" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 100</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="101">
+          <xs:annotation>
+            <xs:documentation>Bazén, kašna</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="102">
+          <xs:annotation>
+            <xs:documentation>Potok, řeka</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="103">
+          <xs:annotation>
+            <xs:documentation>Rybník</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="104">
+          <xs:annotation>
+            <xs:documentation>Umělá vodní nádrž</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="105">
+          <xs:annotation>
+            <xs:documentation>Umělý vodní tok</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="106">
+          <xs:annotation>
+            <xs:documentation>Vodní plocha jiná</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="107">
+          <xs:annotation>
+            <xs:documentation>Vodní prvek jiný</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_200_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 200</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="201">
+          <xs:annotation>
+            <xs:documentation>Altán</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="202">
+          <xs:annotation>
+            <xs:documentation>Drobná stavba jiná</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="203">
+          <xs:annotation>
+            <xs:documentation>Pergola</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="204">
+          <xs:annotation>
+            <xs:documentation>Prodejní stánek</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="205">
+          <xs:annotation>
+            <xs:documentation>Přístřešek</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="206">
+          <xs:annotation>
+            <xs:documentation>Psí WC</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="207">
+          <xs:annotation>
+            <xs:documentation>Sakrální drobná stavba</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="208">
+          <xs:annotation>
+            <xs:documentation>Stání pro popelnice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="209">
+          <xs:annotation>
+            <xs:documentation>Trafostanice</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="210">
+          <xs:annotation>
+            <xs:documentation>Veřejné WC</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_300_TP_bod" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 300</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="301">
+          <xs:annotation>
+            <xs:documentation>Informační tabule</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="302">
+          <xs:annotation>
+            <xs:documentation>Klepadlo</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="303">
+          <xs:annotation>
+            <xs:documentation>Lavička</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="304">
+          <xs:annotation>
+            <xs:documentation>Odpadkový koš</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="305">
+          <xs:annotation>
+            <xs:documentation>Orientační tabule</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="306">
+          <xs:annotation>
+            <xs:documentation>Osvětlení</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="307">
+          <xs:annotation>
+            <xs:documentation>Pítko</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="308">
+          <xs:annotation>
+            <xs:documentation>Sloup, stožár</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="309">
+          <xs:annotation>
+            <xs:documentation>Sloupek</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="310">
+          <xs:annotation>
+            <xs:documentation>Sportovní nářadí</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="311">
+          <xs:annotation>
+            <xs:documentation>Treláž</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="312">
+          <xs:annotation>
+            <xs:documentation>Vybavenost jiná</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="313">
+          <xs:annotation>
+            <xs:documentation>Zahradní hydrant</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_300_TP_linie" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 300</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="311">
+          <xs:annotation>
+            <xs:documentation>Treláž</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="312">
+          <xs:annotation>
+            <xs:documentation>Vybavenost jiná</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_300_TP_plocha" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 300</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">        
+        <xs:enumeration value="312">
+          <xs:annotation>
+            <xs:documentation>Vybavenost jiná</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_400_TP" nillable="true">
+    <xs:annotation>
+      <xs:documentation>Kód technického prvku skupiny 400</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="401">
+          <xs:annotation>
+            <xs:documentation>Stromová mísa</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_lokalizace" nillable="true" >
+    <xs:annotation>
+      <xs:documentation>Kód lokalizace pro objekt Strom</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="0">
+          <xs:annotation>
+            <xs:documentation>neurčeno</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>Solitérní strom</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="2">
+          <xs:annotation>
+            <xs:documentation>Strom ve stromořadí</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="3">
+          <xs:annotation>
+            <xs:documentation>Strom ve skupině stromů</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="kod_typ_stromoradi">
+    <xs:annotation>
+      <xs:documentation>Kód typ stromořadí</xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:integer">
+        <xs:enumeration value="0">
+          <xs:annotation>
+            <xs:documentation>jiné</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+        <xs:enumeration value="1">
+          <xs:annotation>
+            <xs:documentation>uliční</xs:documentation>
+          </xs:annotation>
+        </xs:enumeration>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:complexType name="PolygonGeometryType">
+    <xs:complexContent>
+      <xs:extension base="gml:AbstractFeatureType">
+        <xs:sequence>
+          <xs:element name="OGC_GEOMETRY" minOccurs="1" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:choice>
+                <xs:element ref="gml:MultiSurface" minOccurs="1" maxOccurs="1" />
+                <xs:element ref="gml:surfaceProperty" minOccurs="1" maxOccurs="1" />
+              </xs:choice>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PointGeometryType">
+    <xs:complexContent>
+      <xs:extension base="gml:AbstractFeatureType">
+        <xs:sequence>
+          <xs:element name="OGC_GEOMETRY" minOccurs="1" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:choice>
+                <xs:element ref="gml:MultiPoint" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="gml:Point" minOccurs="1" maxOccurs="1"/>
+              </xs:choice>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LineStringGeometryType">
+    <xs:complexContent>
+      <xs:extension base="gml:AbstractFeatureType">
+        <xs:sequence>
+          <xs:element name="OGC_GEOMETRY" minOccurs="1" maxOccurs="1">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:choice>
+                <xs:element ref="gml:MultiCurve" minOccurs="1" maxOccurs="1"/>
+                <xs:element ref="gml:curveProperty" minOccurs="1" maxOccurs="1"/>
+              </xs:choice>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

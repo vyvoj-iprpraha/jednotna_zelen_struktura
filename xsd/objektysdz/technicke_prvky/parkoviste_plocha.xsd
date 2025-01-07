@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:atrsdz="atrsdz" targetNamespace="parkov" xmlns:parkov="parkov">
+  <xs:import schemaLocation="../../atributysdz.xsd" namespace="atrsdz" />
+  <xs:element name="Parkoviste" type="parkov:ParkovisteType" />
+  <xs:complexType name="ParkovisteType">
+    <xs:complexContent>
+      <xs:extension base="atrsdz:PolygonGeometryType">
+        <xs:sequence>
+          <xs:element name="ObjektovyTypNazev">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Parkoviště" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="kod_sk_TP">
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:enumeration value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="TridaObjektu">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Technické prvky" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element ref="atrsdz:ZapisObjektu" />
+          <xs:element ref="atrsdz:ID_central" minOccurs="0" />
+          <xs:element ref="atrsdz:ID_lokal" />
+          <xs:element ref="atrsdz:kod_poskyt" />
+          <xs:element ref="atrsdz:kod_udrz" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_sprav" />
+          <xs:element ref="atrsdz:kod_r_pece" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_50_TP" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_povrch" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

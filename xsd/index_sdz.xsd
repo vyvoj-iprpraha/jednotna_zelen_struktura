@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:sdz="sdz" xmlns:atrsdz="atrsdz"
+    xmlns:zahonp="zahonp" xmlns:plsprz="plsprz" xmlns:zakplz="zakplz" xmlns:znadpl="znadpl" 
+    xmlns:znadbo="znadbo" xmlns:porbyl="porbyl" xmlns:skuker="skuker" xmlns:kerbod="kerbod" 
+    xmlns:skustr="skustr" xmlns:strobo="strobo" xmlns:strrad="strrad" xmlns:pdrebo="pdrebo" 
+    xmlns:pdreli="pdreli" xmlns:pordre="pordre" xmlns:travni="travni" xmlns:zplopl="zplopl" 
+    xmlns:zploli="zploli" xmlns:cestap="cestap" xmlns:chodni="chodni" xmlns:ozedpl="ozedpl" 
+    xmlns:ozedli="ozedli" xmlns:oploce="oploce" xmlns:parkov="parkov" xmlns:plzpne="plzpne" 
+    xmlns:schodi="schodi" xmlns:zabrad="zabrad" xmlns:artepl="artepl" xmlns:artebo="artebo" 
+    xmlns:vodppl="vodppl" xmlns:vodpli="vodpli" xmlns:vodpbo="vodpbo" xmlns:dstapl="dstapl" 
+    xmlns:dstabo="dstabo" xmlns:vybapl="vybapl" xmlns:vybali="vybali" xmlns:vybabo="vybabo" 
+    xmlns:stromi="stromi"
+    targetNamespace="sdz" elementFormDefault="qualified">    
+    <xs:import schemaLocation="./ext/gml/gml.xsd" namespace="http://www.opengis.net/gml/3.2" />
+    <xs:import schemaLocation="./atributysdz.xsd" namespace="atrsdz" />
+    <xs:import schemaLocation="./objektysdz/plocha_spravy_zelene.xsd" namespace="plsprz"/>
+    <xs:import schemaLocation="./objektysdz/zakladni_plocha_zelene.xsd" namespace="zakplz"/>
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/zahon_plocha.xsd" namespace="zahonp" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/zelen_v_nadobach_plocha.xsd" namespace="znadpl" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/zelen_v_nadobach_bod.xsd" namespace="znadbo" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/porost_bylin_plocha.xsd" namespace="porbyl" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/skupina_keru_plocha.xsd" namespace="skuker" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/ker_bod.xsd" namespace="kerbod" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/skupina_stromu_plocha.xsd" namespace="skustr" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/strom_bod.xsd" namespace="strobo" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/stromoradi_linie.xsd" namespace="strrad" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/popinava_drevina_bod.xsd" namespace="pdrebo" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/popinava_drevina_linie.xsd" namespace="pdreli" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/porost_drevin_plocha.xsd" namespace="pordre" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/travnik_plocha.xsd" namespace="travni" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/zivy_plot_plocha.xsd" namespace="zplopl" />
+    <xs:import schemaLocation="./objektysdz/vegetacni_prvky/zivy_plot_linie.xsd" namespace="zploli" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/cesta_plocha.xsd" namespace="cestap" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/chodnik_plocha.xsd" namespace="chodni" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/operna_zed_plocha.xsd" namespace="ozedpl" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/operna_zed_linie.xsd" namespace="ozedli" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/oploceni_linie.xsd" namespace="oploce" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/parkoviste_plocha.xsd" namespace="parkov" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/plocha_zpevnena_neurceno_plocha.xsd" namespace="plzpne" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/schodiste_plocha.xsd" namespace="schodi" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/zabradli_linie.xsd" namespace="zabrad" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/umelecky_artefakt_plocha.xsd" namespace="artepl" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/umelecky_artefakt_bod.xsd" namespace="artebo" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/vodni_prvek_plocha.xsd" namespace="vodppl" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/vodni_prvek_linie.xsd" namespace="vodpli" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/vodni_prvek_bod.xsd" namespace="vodpbo" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/drobna_stavba_plocha.xsd" namespace="dstapl" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/drobna_stavba_bod.xsd" namespace="dstabo" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/vybavenost_plocha.xsd" namespace="vybapl" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/vybavenost_linie.xsd" namespace="vybali" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/vybavenost_bod.xsd" namespace="vybabo" />
+    <xs:import schemaLocation="./objektysdz/technicke_prvky/stromova_misa_plocha.xsd" namespace="stromi" />
+    <xs:element name="DataSDZ">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="gml:AbstractFeatureType">
+                    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                        <xs:element name="FeatureMember">
+                            <xs:complexType>
+                                <xs:complexContent>
+                                    <xs:extension base="gml:AbstractFeatureMemberType">
+                                        <xs:sequence>
+                                            <xs:element ref="gml:AbstractFeature" />
+                                        </xs:sequence>
+                                    </xs:extension>
+                                </xs:complexContent>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="VerzeSDZ" type="xs:string" fixed="1.0.0" use="required"/>
+                    <xs:attribute name="DatumZapisu" type="xs:dateTime" use="required"/>
+                    <xs:attribute name="PoskytovatelDat" type="xs:string" use="required"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PlochaSpravyZelene" type="plsprz:PlochaSpravyZeleneType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="ZakladniPlochaZelene" type="zakplz:ZakladniPlochaZeleneType" substitutionGroup="gml:AbstractFeature"/> 
+    <xs:element name="Zahon" type="zahonp:ZahonType" substitutionGroup="gml:AbstractFeature"/> 
+    <xs:element name="ZelenVNadobachPlocha" type="znadpl:ZelenVNadobachPlochaType" substitutionGroup="gml:AbstractFeature"/> 
+    <xs:element name="ZelenVNadobachBod" type="znadbo:ZelenVNadobachBodType" substitutionGroup="gml:AbstractFeature"/> 
+    <xs:element name="PorostBylin" type="porbyl:PorostBylinType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="SkupinaKeru" type="skuker:SkupinaKeruType" substitutionGroup="gml:AbstractFeature"/> 
+    <xs:element name="Ker" type="kerbod:KerType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="SkupinaStromu" type="skustr:SkupinaStromuType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Strom" type="strobo:StromType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Stromoradi" type="strrad:StromoradiType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="PopinavaDrevinaBod" type="pdrebo:PopinavaDrevinaBodType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="PopinavaDrevinaLinie" type="pdreli:PopinavaDrevinaLinieType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="PorostDrevin" type="pordre:PorostDrevinType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Travnik" type="travni:TravnikType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="ZivyPlotPlocha" type="zplopl:ZivyPlotPlochaType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="ZivyPlotLinie" type="zploli:ZivyPlotLinieType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Cesta" type="cestap:CestaType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Chodnik" type="chodni:ChodnikType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="OpernaZedPlocha" type="ozedpl:OpernaZedPlochaType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="OpernaZedLinie" type="ozedli:OpernaZedLinieType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Oploceni" type="oploce:OploceniType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Parkoviste" type="parkov:ParkovisteType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="PlochaZpevnenaNeurceno" type="plzpne:PlochaZpevnenaNeurcenoType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Schodiste" type="schodi:SchodisteType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="Zabradli" type="zabrad:ZabradliType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="UmeleckyArtefaktPlocha" type="artepl:UmeleckyArtefaktPlochaType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="UmeleckyArtefaktBod" type="artebo:UmeleckyArtefaktBodType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="VodniPrvekPlocha" type="vodppl:VodniPrvekPlochaType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="VodniPrvekLinie" type="vodpli:VodniPrvekLinieType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="VodniPrvekBod" type="vodpbo:VodniPrvekBodType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="DrobnaStavbaPlocha" type="dstapl:DrobnaStavbaPlochaType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="DrobnaStavbaBod" type="dstabo:DrobnaStavbaBodType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="VybavenostPlocha" type="vybapl:VybavenostPlochaType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="VybavenostLinie" type="vybali:VybavenostLinieType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="VybavenostBod" type="vybabo:VybavenostBodType" substitutionGroup="gml:AbstractFeature"/>
+    <xs:element name="StromovaMisa" type="stromi:StromovaMisaType" substitutionGroup="gml:AbstractFeature"/>
+</xs:schema>

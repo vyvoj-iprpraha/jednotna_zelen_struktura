@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:atrsdz="atrsdz" targetNamespace="vodpbo" xmlns:vodpbo="vodpbo">
+  <xs:import schemaLocation="../../atributysdz.xsd" namespace="atrsdz" />
+  <xs:element name="VodniPrvekBod" type="vodpbo:VodniPrvekBodType" />
+  <xs:complexType name="VodniPrvekBodType">
+    <xs:complexContent>
+      <xs:extension base="atrsdz:PointGeometryType">
+        <xs:sequence>
+          <xs:element name="ObjektovyTypNazev">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Vodní prvek - bod" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="kod_sk_TP">
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:enumeration value="100" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="TridaObjektu">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Technické prvky" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element ref="atrsdz:ZapisObjektu" />
+          <xs:element ref="atrsdz:ID_central" minOccurs="0" />
+          <xs:element ref="atrsdz:ID_lokal" />
+          <xs:element ref="atrsdz:kod_poskyt" />
+          <xs:element ref="atrsdz:kod_udrz" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_sprav" />
+          <xs:element ref="atrsdz:kod_r_pece" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_100_TP_bod" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_k_mat" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+  xmlns:atrsdz="atrsdz" targetNamespace="kerbod" xmlns:kerbod="kerbod">
+  <xs:import schemaLocation="../../atributysdz.xsd" namespace="atrsdz" />
+  <xs:element name="Ker" type="kerbod:KerType" />
+  <xs:complexType name="KerType">
+    <xs:complexContent>
+      <xs:extension base="atrsdz:PointGeometryType">
+        <xs:sequence>
+          <xs:element name="ObjektovyTypNazev">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Keř" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="kod_sk_VP">
+            <xs:simpleType>
+              <xs:restriction base="xs:integer">
+                <xs:enumeration value="50" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="TridaObjektu">
+            <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="Vegetační prvky" />
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element ref="atrsdz:ZapisObjektu" />
+          <xs:element ref="atrsdz:ID_central"  minOccurs="0" />
+          <xs:element ref="atrsdz:ID_lokal" />
+          <xs:element ref="atrsdz:kod_poskyt" />
+          <xs:element ref="atrsdz:kod_udrz" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_sprav" />
+          <xs:element ref="atrsdz:kod_r_pece" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_50_VP" />
+          <xs:element ref="atrsdz:kod_drevin" minOccurs="0" />
+          <xs:element ref="atrsdz:kod_tvar" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>
